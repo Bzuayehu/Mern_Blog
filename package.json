@@ -1,0 +1,23 @@
+{
+  "name": "blog-site-using-mern-stack",
+  "version": "1.0.0",
+  "description": "Mern app using mern stack ",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server",
+    "front-end": "npm start --prefix front-end",
+    "dev":"concurrently \"npm run server\" \"npm run front-end\""
+  },
+  "keywords": [],
+  "author": "Bzuayehu.M",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0"
+  }
+}
