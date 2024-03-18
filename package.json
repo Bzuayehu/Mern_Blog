@@ -4,7 +4,7 @@
   "description": "Mern app using mern stack ",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server",
+    "server": "nodemon server --prefix back-end",
     "front-end": "npm start --prefix front-end",
     "dev":"concurrently \"npm run server\" \"npm run front-end\""
   },
