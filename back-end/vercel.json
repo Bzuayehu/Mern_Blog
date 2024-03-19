@@ -8,7 +8,7 @@
         {
             "src": "/(.*)",
             "dest": "/",
-            "methods":["GET","POST"]
+            "method":["GET","POST"]
         }
     ]
 }
