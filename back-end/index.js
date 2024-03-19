@@ -30,7 +30,7 @@ const withDb = async (operations,res)=>{
     res.status(500).json({ message: "error connecting to database", error });
   }
 }
-app.use("/",(req,res)=> 
+app.get("/yes",(req,res)=> 
   {res.send("connected successfully")}
        );
 app.get("/api/articles/:name", async (req, res) => {
