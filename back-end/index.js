@@ -19,7 +19,7 @@ app.use(express.json({ extended: false }));
 
 const withDb = async (operations,res)=>{
   try {
-    const client = await MongoClient.connect("mongodb+srv://Buze:B69m12@cluster0.tj7mc75.mongodb.net/mernblog",{});
+    const client = await MongoClient.connect("mongodb+srv://bizuayehu:B69@cluster0.fkuhixf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",{});
     console.log(
       `MongoDb connected succeessfully`
     );
