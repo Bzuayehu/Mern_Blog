@@ -30,7 +30,7 @@ const withDb = async (operations,res)=>{
     res.status(500).json({ message: "error connecting to database", error });
   }
 }
-app.get("",(req,res)=> res.send("connected successfully"));
+app.get("/",(req,res)=> res.send("connected successfully"));
 app.get("/api/articles/:name", async (req, res) => {
   withDb(async (dbs)=>{
     const articleName = req.params.name; 
