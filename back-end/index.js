@@ -39,7 +39,7 @@ app.get("/api/articles/:name", async (req, res) => {
     const articlesInfo = await dbs
       .collection("articles")
       .findOne({name:articleName});
-    res.status(200).json(articlesInfo);
+    res.status(200).json(articleName);
   },res)
    
 });
