@@ -23,6 +23,7 @@ const withDb = async (operations,res)=>{
     console.log(
       `MongoDb connected succeessfully`
     );
+    
     const dbs = client.db();
     await operations(dbs)
     client.close();
