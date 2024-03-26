@@ -24,7 +24,7 @@ const withDb = async (operations,res)=>{
       `MongoDb connected succeessfully`
     );
     
-    const dbs = client.db("mernblog);
+    const dbs = client.db("mernblog");
     await operations(dbs)
     client.close();
   } catch (error) {
