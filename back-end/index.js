@@ -34,16 +34,16 @@ const withDb = async (operations,res)=>{
 app.get("/",(req,res)=> 
   {res.send("working successfully")}
        );
-// app.get("/api/articles/:name", async (req, res) => {
-//   withDb(async (dbs)=>{
-//     const articleName = req.params.name; 
-//     const articlesInfo = await dbs
-//       .collection("articles")
-//       .findOne({name:articleName});
-//     res.status(200).json(articlesInfo.collection("articles");
-//   },res)
+app.get("/api/articles/:name", async (req, res) => {
+  withDb(async (dbs)=>{
+    const articleName = req.params.name; 
+    const articlesInfo = await dbs
+      .collection("articles")
+      .findOne({name:articleName});
+    res.status(200).json(articlesInfo);
+  },res)
    
-// });
+});
 
 // app.post("/api/articles/:name/add-comments", (req, res) => {
 //   const { username, text } = req.body;
