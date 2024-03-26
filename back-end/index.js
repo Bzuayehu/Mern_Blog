@@ -45,23 +45,23 @@ app.get("/api/articles/:name", async (req, res) => {
    
 });
 
-// app.post("/api/articles/:name/add-comments", (req, res) => {
-//   const { username, text } = req.body;
-//   const articleName = req.params.name;
-//   withDb(async(dbs)=>{
-//     const articleInfo =  await dbs.collection("articles").findOne({name:articleName});
-//     await dbs.collection("articles").updateOne(
-//       {name:articleName},
-//       {
-//         $set:{
-//         comments:articleInfo.comments.concat({username,text})
-//       },
-//     }
-//     );
-//     const updateArticleInfo = await dbs.collection("articles").findOne({name:articleName})
-//     res.status(200).json(updateArticleInfo);
-//   },res);
+app.post("/api/articles/:name/add-comments", (req, res) => {
+  const { username, text } = req.body;
+  const articleName = req.params.name;
+  withDb(async(dbs)=>{
+    const articleInfo =  await dbs.collection("articles").findOne({name:articleName});
+    await dbs.collection("articles").updateOne(
+      {name:articleName},
+      {
+        $set:{
+        comments:articleInfo.comments.concat({username,text})
+      },
+    }
+    );
+    const updateArticleInfo = await dbs.collection("articles").findOne({name:articleName})
+    res.status(200).json(updateArticleInfo);
+  },res);
   
-// });
+});
 
 app.listen(PORT, () => console.log(`server started at port  ${PORT}`));
